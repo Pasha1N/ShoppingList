@@ -38,6 +38,8 @@ namespace ShoppingList
             delete.Enabled = false;
             buttonUp.Enabled = false;
             buttonDown.Enabled = false;
+
+            Item_TextChanged(this, EventArgs.Empty);
         }
 
         private void Item_TextChanged(object sender, EventArgs e)
