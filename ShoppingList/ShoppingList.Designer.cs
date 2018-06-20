@@ -46,7 +46,7 @@
             this.shoppingList.Name = "shoppingList";
             this.shoppingList.Size = new System.Drawing.Size(594, 349);
             this.shoppingList.TabIndex = 0;
-            this.shoppingList.SelectedIndexChanged += new System.EventHandler(this.shoppingList_SelectedIndexChanged);
+            this.shoppingList.SelectedIndexChanged += new System.EventHandler(this.ShoppingList_SelectedIndexChanged);
             // 
             // buttonUp
             // 
@@ -59,7 +59,7 @@
             this.buttonUp.TabIndex = 10;
             this.buttonUp.Text = "Up";
             this.buttonUp.UseVisualStyleBackColor = true;
-            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
+            this.buttonUp.Click += new System.EventHandler(this.ButtonUp_Click);
             // 
             // buttonDown
             // 
@@ -72,7 +72,7 @@
             this.buttonDown.TabIndex = 9;
             this.buttonDown.Text = "Down";
             this.buttonDown.UseVisualStyleBackColor = true;
-            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            this.buttonDown.Click += new System.EventHandler(this.ButtonDown_Click);
             // 
             // item
             // 
@@ -84,7 +84,7 @@
             this.item.Size = new System.Drawing.Size(432, 20);
             this.item.TabIndex = 8;
             this.item.Text = "  ";
-            this.item.TextChanged += new System.EventHandler(this.item_TextChanged);
+            this.item.TextChanged += new System.EventHandler(this.Item_TextChanged);
             // 
             // delete
             // 
@@ -98,7 +98,7 @@
             this.delete.TabIndex = 7;
             this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
+            this.delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // add
             // 
@@ -111,7 +111,7 @@
             this.add.TabIndex = 6;
             this.add.Text = "Add";
             this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
+            this.add.Click += new System.EventHandler(this.Add_Click);
             // 
             // windowShoppingList
             // 
