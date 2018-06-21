@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace ShoppingList
 {
-    public partial class windowShoppingList : Form
+    public partial class WindowShoppingList : Form
     {
-        public windowShoppingList()
+        public WindowShoppingList()
         {
             InitializeComponent();
         }
@@ -73,12 +73,12 @@ namespace ShoppingList
             buttonUp.Enabled = false;
             buttonDown.Enabled = false;
 
-            checkForSimilarity();
+            CheckForSimilarity();
         }
 
         private void Item_TextChanged(object sender, EventArgs e)
         {
-            checkForSimilarity();
+            CheckForSimilarity();
         }
 
         private void ShoppingList_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace ShoppingList
             buttonDown.Enabled = shoppingList.SelectedIndex < shoppingList.Items.Count - 1;
         }
 
-        public void checkForSimilarity()
+        public void CheckForSimilarity()
         {
             for (int i = 0; i < item.Text.Length; i++)
             {

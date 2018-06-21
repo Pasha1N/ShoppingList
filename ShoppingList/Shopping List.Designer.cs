@@ -1,6 +1,6 @@
 ﻿namespace ShoppingList
 {
-    partial class windowShoppingList
+    partial class WindowShoppingList
     {
         /// <summary>
         /// Обязательная переменная конструктора.
