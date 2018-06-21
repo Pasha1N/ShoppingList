@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ShoppingList
@@ -20,14 +21,47 @@ namespace ShoppingList
 
         private void ButtonDown_Click(object sender, EventArgs e)
         {
+            bool isMarked = false;
+            foreach (int item in shoppingList.CheckedIndices)
+            {
+                if (shoppingList.SelectedIndex == item)
+                {
+                    isMarked = true;
+                    break;
+                }
+            }
+
             shoppingList.Items.Insert(shoppingList.SelectedIndex + 2, shoppingList.Items[shoppingList.SelectedIndex]);
+
+            if (isMarked)
+            {
+                shoppingList.SetItemChecked(shoppingList.SelectedIndex + 2, true);
+            }
+
             shoppingList.SetSelected(shoppingList.SelectedIndex + 2, true);
             shoppingList.Items.RemoveAt(shoppingList.SelectedIndex - 2);
         }
 
         private void ButtonUp_Click(object sender, EventArgs e)
         {
+            bool isMarked = false;
+
+            foreach (int item in shoppingList.CheckedIndices)
+            {
+                if (shoppingList.SelectedIndex == item)
+                {
+                    isMarked = true;
+                    break;
+                }
+            }
+
             shoppingList.Items.Insert(shoppingList.SelectedIndex - 1, shoppingList.Items[shoppingList.SelectedIndex]);
+
+            if (isMarked)
+            {
+                shoppingList.SetItemChecked(shoppingList.SelectedIndex - 2, true);
+            }
+
             shoppingList.SetSelected(shoppingList.SelectedIndex - 2, true);
             shoppingList.Items.RemoveAt(shoppingList.SelectedIndex + 2);
         }
@@ -39,10 +73,22 @@ namespace ShoppingList
             buttonUp.Enabled = false;
             buttonDown.Enabled = false;
 
-            Item_TextChanged(this, EventArgs.Empty);
+            checkForSimilarity();
         }
 
         private void Item_TextChanged(object sender, EventArgs e)
+        {
+            checkForSimilarity();
+        }
+
+        private void ShoppingList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            delete.Enabled = true;
+            buttonUp.Enabled = shoppingList.SelectedIndex > 0;
+            buttonDown.Enabled = shoppingList.SelectedIndex < shoppingList.Items.Count - 1;
+        }
+
+        public void checkForSimilarity()
         {
             for (int i = 0; i < item.Text.Length; i++)
             {
@@ -79,13 +125,6 @@ namespace ShoppingList
             {
                 add.Enabled = false;
             }
-        }
-
-        private void ShoppingList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            delete.Enabled = true;
-            buttonUp.Enabled = shoppingList.SelectedIndex > 0 ? true : false;
-            buttonDown.Enabled = shoppingList.SelectedIndex < shoppingList.Items.Count - 1 ? true : false;
         }
     }
 }
