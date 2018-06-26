@@ -13,7 +13,7 @@ namespace ShoppingList
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WindowShoppingList());
+            Application.Run(new ShoppingList());
         }
     }
 }

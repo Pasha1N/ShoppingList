@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace ShoppingList
 {
-    public partial class WindowShoppingList : Form
+    public partial class ShoppingList : Form
     {
-        public WindowShoppingList()
+        public ShoppingList()
         {
             InitializeComponent();
         }
