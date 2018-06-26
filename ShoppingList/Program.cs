@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ShoppingList
 {
-    public static class Program
+    static public class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
